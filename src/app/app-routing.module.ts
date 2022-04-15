@@ -19,7 +19,6 @@ const routes: Routes = [
     path: 'catering',
     loadChildren: () => import('./catering/catering.module').then( m => m.CateringPageModule)
   },
-  
   {
     path: 'ratingcatering',
     loadChildren: () => import('./ratingcatering/ratingcatering.module').then( m => m.RatingcateringPageModule)
@@ -43,6 +42,10 @@ const routes: Routes = [
   {
     path: 'ratingmaintenance',
     loadChildren: () => import('./ratingmaintenance/ratingmaintenance.module').then( m => m.RatingmaintenancePageModule)
+  },
+  {
+    path: 'aduancatering',
+    loadChildren: () => import('./aduancatering/aduancatering.module').then( m => m.AduancateringPageModule)
   },
 ];
 

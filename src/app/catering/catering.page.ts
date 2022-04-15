@@ -8,7 +8,8 @@
 */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { NavController, ModalController, LoadingController, ToastController,Platform } from '@ionic/angular';
+import { UtilService } from 'src/app/services/util.service';
 
 @Component({
   selector: 'app-catering',
@@ -16,6 +17,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./catering.page.scss'],
 })
 export class CateringPage implements OnInit {
+  [x: string]: any;
 
   aduan: any[1] = [
     {id: 1, name: '', src: '', background: '', page: ''},
@@ -27,17 +29,23 @@ export class CateringPage implements OnInit {
 
 
    constructor(
-    private router: Router
+    public loadingController: LoadingController,
+    private router: Router,
+    public util: UtilService
   ) { }
 
   ngOnInit() {
   }
 
   onBack() {
-    this.NavCtrl.back();
+    this.router.navigate(['home']);
   }
 
+  openAduancat () {
+  this.router.navigate(['aduancatering']);
+  }
 
-
-
+  openRatingcat() {
+    this.router.navigate(['ratingcatering']);
+    }
 }

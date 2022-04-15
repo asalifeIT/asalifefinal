@@ -1,0 +1,48 @@
+<!--
+  Authors : bunchdevelopers (Rahul Jograna)
+  Website : https://bunchdevelopers.com/
+  App Name : ionic6Template Pack
+  This App Template Source code is licensed as per the
+  terms found in the Website https://bunchdevelopers.com/license
+  Copyright and Good Faith Purchasers © 2021-present bunchdevelopers.
+ -->
+ <ion-content>
+
+  <div class="bg_img" [style.backgroundImage]="'url(assets/images/aduancat.jpg)'">
+    <div class="back_div">
+      <ion-buttons slot="start">
+        <ion-button (click)="onBack()">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      
+    </div>
+  </div>
+
+  <div class="main_content ion-padding">
+
+    <div class="title">
+      <ion-label class="sub_heading" style="color: black;">Form Aduan Catering</ion-label>
+      <ion-label class="sub_heading"></ion-label>
+      <ion-label class="sub_ttl"></ion-label>
+    </div>
+        <ion-label class="sub_heading">Deskripsi</ion-label>
+    <ion-label class="sub_heading">Silahkan mengisi aduan apabila ditemukan hal-hal yang tidak berkenan</ion-label>
+    <ion-label class="sub_heading">Formulir Aduan</ion-label>
+ <div class="content">
+      <ion-item lines="none">
+      <ion-input type="text" placeholder="Lokasi"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-input type="text" placeholder="Deskripsi Aduan"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-input type="text" placeholder="Ktirik dan Saran"></ion-input>
+    </ion-item>
+  </div>
+  <form form="ngForm" (ngSubmit)="onSubmit(form.value)" class="form-horizontal">
+    </ion-button>
+
+  </div>
+
+</ion-content>
