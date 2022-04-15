@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { ServiceService } from '../services/service.service';
+import { Router } from '@angular/router';
+
+
+
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -14,11 +19,11 @@ export class HomePage implements OnInit {
   laundry: any[] = [
     {id: 1, name: 'Laundry', src: 'assets/icons/laundry.png', background: 'rgba(27,150,181, 0.1)', page: ''},
   ];
-  
+
   housekeeping: any[] = [
     {id: 1, name: 'House Keeping', src: 'assets/icons/hk.png', background: 'rgba(27,150,181, 0.1)', page: ''},
   ];
-  
+
   admaintan: any[] = [
     {id: 1, name: 'Maintenance', src: 'assets/icons/mainten.png', background: 'rgba(27,150,181, 0.1)', page: ''},
   ];
@@ -28,7 +33,9 @@ export class HomePage implements OnInit {
   DataLogin:any;
   constructor(
     public loadingController: LoadingController,
-    private serviceService: ServiceService
+    private serviceService: ServiceService,
+    private router: Router
+
   ) {}
 
   ngOnInit() {
@@ -56,4 +63,16 @@ export class HomePage implements OnInit {
     this.serviceService.logout();
     loading.dismiss();
    }
+
+
+openRest() {
+  this.router.navigate(['catering']);
 }
+
+}
+
+
+
+
+
+

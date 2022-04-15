@@ -16,9 +16,33 @@ const routes: Routes = [
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
   {
-    path: 'aduancat',
-    canActivate: [AuthGuard],
-    loadChildren: () => import('./aduancat/aduancat.module').then( m => m.AduancatPageModule)
+    path: 'catering',
+    loadChildren: () => import('./catering/catering.module').then( m => m.CateringPageModule)
+  },
+  
+  {
+    path: 'ratingcatering',
+    loadChildren: () => import('./ratingcatering/ratingcatering.module').then( m => m.RatingcateringPageModule)
+  },
+  {
+    path: 'aduanhk',
+    loadChildren: () => import('./aduanhk/aduanhk.module').then( m => m.AduanhkPageModule)
+  },
+  {
+    path: 'ratinghk',
+    loadChildren: () => import('./ratinghk/ratinghk.module').then( m => m.RatinghkPageModule)
+  },
+  {
+    path: 'aduanlaundry',
+    loadChildren: () => import('./aduanlaundry/aduanlaundry.module').then( m => m.AduanlaundryPageModule)
+  },
+  {
+    path: 'aduanmaintenance',
+    loadChildren: () => import('./aduanmaintenance/aduanmaintenance.module').then( m => m.AduanmaintenancePageModule)
+  },
+  {
+    path: 'ratingmaintenance',
+    loadChildren: () => import('./ratingmaintenance/ratingmaintenance.module').then( m => m.RatingmaintenancePageModule)
   },
 ];
 

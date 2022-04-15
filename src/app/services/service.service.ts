@@ -133,14 +133,14 @@ export class ServiceService {
     );
   }
 
-  submitAduanCatering(formAduanCatering){
+  submitcatering(formcatering){
     let dataStorage=JSON.parse(localStorage.getItem(this.TOKEN_KEY));
     this.token=dataStorage;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': "Bearer "+ this.token
     });
-    return this.http.post(this.API_URL + 'catering/add', formAduanCatering, { headers: headers, observe: 'response' }).pipe(
+    return this.http.post(this.API_URL + 'catering/add', formcatering, { headers: headers, observe: 'response' }).pipe(
       tap(Data => {
         this.DataLogin=Data;
         let message='Aduan anda terkirim.';

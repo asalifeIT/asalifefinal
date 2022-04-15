@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AduancatPageRoutingModule } from './aduancat-routing.module';
+import { AduanlaundryPageRoutingModule } from './aduanlaundry-routing.module';
 
-import { AduancatPage } from './aduancat.page';
+import { AduanlaundryPage } from './aduanlaundry.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AduancatPageRoutingModule
+    AduanlaundryPageRoutingModule
   ],
-  declarations: [AduancatPage]
+  declarations: [AduanlaundryPage]
 })
-export class AduancatPageModule {}
+export class AduanlaundryPageModule {}
