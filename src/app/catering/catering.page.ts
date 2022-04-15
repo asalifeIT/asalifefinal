@@ -33,9 +33,9 @@ export class CateringPage implements OnInit {
   ngOnInit() {
   }
 
-back (){
-  this.router.navigate(['catering']);
-}
+  onBack() {
+    this.NavCtrl.back();
+  }
 
 
 

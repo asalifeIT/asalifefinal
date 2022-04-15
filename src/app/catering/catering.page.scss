@@ -1,7 +1,7 @@
 ion-header {
     ion-label{
       font-size:13px;
-      font-family: 'regular';
+      font-family: "regular";
      }
     background: transparent;
     ion-item {
@@ -14,7 +14,14 @@ ion-header {
 
   ion-content {
     * {
-      font-family:poppins;
+      font-family: "regular";
+    }
+
+    .title {
+      font-family: "regular";
+    }
+    .icon_title {
+      font-family: "regular";
     }
 
     .main-header {
@@ -167,7 +174,7 @@ ion-header {
           background-size: cover;
         }
         .title {
-          font-family: "regular";
+          font-family: 'regular';
           display: flex;
           flex-direction: column;
           margin-top: 12px;
@@ -177,24 +184,26 @@ ion-header {
            
           }
           .sub_ttl1 {
-            font-family: "regular";
+            font-family: 'regular';
             font-size: 13px;
             margin: 3px 0px 3px 0px;
             color: rgb(10, 1, 1);
           }
           .sub_ttl {
-            font-family: "regular";
+            font-family: 'regular';
             font-size: 13px;
             margin: 3px 0px 3px 0px;
             color: rgb(8, 0, 0);
           }
-  
+
           .icon_title {
+
             display: flex;
             align-items: center;
             color: #ff7c31;
             margin: 2px 0px 2px 0px;
             ion-icon {
+              font-family: 'regular';
               font-size: 20px;
               margin-right: 5px;
             }
