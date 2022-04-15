@@ -86,7 +86,6 @@ export class LoginPage implements OnInit {
   Login() {
     console.log("anda sekarang login")
     this.authService.login(this.nrp, this.password)
-     
     }
   nrp(nrp: any, password: any) {
     throw new Error('Method not implemented.');
