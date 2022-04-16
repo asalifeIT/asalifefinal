@@ -11,14 +11,11 @@
      ASTRO SERVICE-MEMBER ASTRA
 
   </ion-card-title>
-</div>
-
+  </div>
   <ion-grid>
-    <ion-row>
-      <ion-col><br />
-        <img  src="assets/images/profile.png" width="30%" /><br /><br />
-      </ion-col>
-   </ion-row>
+    <ion-card>
+  <img src="assets/images/time.png"/><br>
+   </ion-card>
 
    <ion-card class="ion-no-margin">
     <ion-card-header>
@@ -52,20 +49,20 @@
       <ng-container *ngFor="let validation of validations.password">
         <div class="error-message" *ngIf="FormLogin.get('password').hasError(validation.type) && (FormLogin.get('password').dirty || FormLogin.get('password').touched)">
           <span>{{ validation.message }}</span>
-          <br><br>
+          <br>
         </div>
       </ng-container>
     </div>
-    <br>
-
-    <ion-button type="submit"  [disabled]="!FormLogin.valid">Login</ion-button>
-
+<section>
+         <ion-button class="expand-block" type="submit"  [disabled]="!FormLogin.valid">Login</ion-button>
+        </section>
   </form>
-
 </ion-card-header></ion-card>
-
-
   </ion-grid>
+
+
+
+
 
 
 

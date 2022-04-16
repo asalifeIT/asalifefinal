@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { ServiceService } from '../services/service.service';
 import { Router } from '@angular/router';
-
+import { UtilService } from 'src/app/services/util.service';
 
 
 
@@ -34,7 +34,8 @@ export class HomePage implements OnInit {
   constructor(
     public loadingController: LoadingController,
     private serviceService: ServiceService,
-    private router: Router
+    private router: Router,
+    public util: UtilService
 
   ) {}
 
@@ -68,6 +69,19 @@ export class HomePage implements OnInit {
 openRest() {
   this.router.navigate(['catering']);
 }
+
+openHkeeping() {
+  this.router.navigate(['aduanhk']);
+}
+
+openLaundry(){
+  this.router.navigate(['aduanlaundry']);
+}
+
+openAdmaintan(){
+  this.router.navigate(['aduanmaintenance']);
+}
+
 
 }
 

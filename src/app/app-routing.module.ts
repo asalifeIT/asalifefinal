@@ -47,6 +47,7 @@ const routes: Routes = [
     path: 'aduancatering',
     loadChildren: () => import('./aduancatering/aduancatering.module').then( m => m.AduancateringPageModule)
   },
+
 ];
 
 @NgModule({

@@ -1,35 +1,28 @@
-/*
-  Authors : bunchdevelopers (Rahul Jograna)
-  Website : https://bunchdevelopers.com/
-  App Name : ionic6Template Pack
-  This App Template Source code is licensed as per the
-  terms found in the Website https://bunchdevelopers.com/license
-  Copyright and Good Faith Purchasers © 2021-present bunchdevelopers.
-*/
 import { Component, OnInit } from '@angular/core';
-import { LoadingController } from '@ionic/angular';
-import { ServiceService } from '../services/service.service';
-import { Router } from '@angular/router';
-import { UtilService } from 'src/app/services/util.service';
+ import { HttpClient } from '@angular/common/http';
+ 
 
 @Component({
   selector: 'app-aduancatering',
   templateUrl: './aduancatering.page.html',
   styleUrls: ['./aduancatering.page.scss'],
 })
+
 export class AduancateringPage implements OnInit {
+  constructor(private http:HttpClient){}
+  onSubmit(data: any)
 
-
-  constructor(
-    public loadingController: LoadingController,
-    private serviceService: ServiceService,
-    private router: Router,
-    public util: UtilService
-
-  ) { }
-
-  ngOnInit() {
+  {
+    this.http.post('http://asabeta.com/api/catering/add',data)
+    .subscribe((result)=>{
+console.warn('result',result)
+    })
+    console.warn(data);
   }
 
+  
 
+  ngOnInit() {
+  
+  }
 }

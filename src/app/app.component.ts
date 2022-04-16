@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Platform, NavController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
+import { UtilService } from 'src/app/services/util.service';
 import { ServiceService } from './services/service.service';
 
 @Component({
@@ -11,7 +11,12 @@ import { ServiceService } from './services/service.service';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
+
+
 export class AppComponent {
+  Username:any;
+  DataLogin:any;
+
   constructor(
     
     private platform: Platform,
@@ -23,13 +28,6 @@ export class AppComponent {
     this.initializeApp();
   }
   private router: Router
-
-  home() {
-    this.router.navigate(['tabs/tab1']);
-  }
-  nearby() {
-    this.router.navigate(['tabs/tab2']);
-  }
 
   initializeApp() {
     this.platform.ready().then(() => {

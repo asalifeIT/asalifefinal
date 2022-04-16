@@ -1,6 +1,6 @@
 ion-header {
   ion-label{
-    font-size:13px;
+    font-size:10px;
     font-family: "regular";
    }
   background: transparent;
@@ -31,7 +31,7 @@ ion-content {
 
 ion-note{
   font-family: 'regular';
-  font-size: 18px;
+  font-size: 12px;
   margin-left:5vh;
 }
 
@@ -57,7 +57,7 @@ ion-note{
             }
           }
           b {
-            font-size: 1rem;
+            font-size: 0.5rem;
           }
         }
         ion-button {
@@ -65,7 +65,7 @@ ion-note{
           transform: translateY(10%);
           text-transform: none;
           ion-text {
-            font-size: 0.7rem;
+            font-size: 0.5rem;
             font-weight: bold;
             text-shadow: 1px 1px 1px var(--ion-color-medium);
           }
@@ -90,6 +90,7 @@ ion-note{
           ion-card-content {
             ion-label {
               font-weight: regular;
+              font-size: 11px;
               text-shadow: 1px 1px 1px var(--ion-color-medium);
               letter-spacing: 0.1px;
             }

@@ -10,7 +10,7 @@ import { Observable, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceService {
+export class ServiceService{ 
 
   DataLogin:any;
   DataResponse:any;
