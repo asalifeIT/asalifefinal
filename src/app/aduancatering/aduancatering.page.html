@@ -1,8 +1,36 @@
-<h1>Tes Post Aduan Catering</h1>
-<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.any)">
-<input type="text" name="lokasi" ngModel placeholder="Lokasi"><br>
-<input type="text" name="deskripsi" ngModel placeholder="Deskripsi"><br>
-<input type="text" name="kritik_saran" ngModel placeholder="Kritik dan saran"><br>
-<ion-button class="expand-block" type="onSubmit">Kirim Aduan</ion-button>
-
-</form>
+<ion-header class="ion-no-border">
+  <ion-item lines="none">
+    <ion-buttons slot="start">
+      <ion-button (click)="util.openSideMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-label color="dark">
+    Form Aduan Catering
+  </ion-label>
+  <ion-buttons slot="end">
+    <ion-icon (click)="onBack()" name="arrow-undo"></ion-icon>
+  </ion-buttons>
+  </ion-item>
+ </ion-header>
+<ion-content>
+  <div class="main_content ion-padding">
+        <ion-label class="sub_heading">Deskripsi</ion-label>
+    <ion-label class="sub_heading">Silahkan mengisi aduan apabila ditemukan hal-hal yang tidak berkenan</ion-label>
+    <ion-label class="sub_heading">Formulir Aduan</ion-label>
+ <div class="content">
+      <ion-item lines="none">
+      <ion-input type="text" placeholder="Lokasi"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-input type="text" placeholder="Deskripsi Aduan"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-input type="text" placeholder="Ktirik dan Saran"></ion-input>
+    </ion-item>
+  </div>
+    <ion-button class="content_button" (click)="onFormulir()" expand="block">
+      Kirim Aduan
+    </ion-button>
+  </div>
+</ion-content>

@@ -18,16 +18,18 @@ export class AppComponent {
   DataLogin:any;
 
   constructor(
-    
+
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private serviceService: ServiceService,
     private navCtrl: NavController,
+    private router: Router,
+    public util: UtilService
   ) {
     this.initializeApp();
   }
-  private router: Router
+
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -46,4 +48,12 @@ export class AppComponent {
         }
    });
   }
+
+  ngOnInit() {
+  }
+
+  home() {
+    this.router.navigate(['tabs/tab1']);
+  }
+
 }

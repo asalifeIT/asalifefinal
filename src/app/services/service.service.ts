@@ -1,3 +1,4 @@
+import { AduancateringPage } from './../aduancatering/aduancatering.page';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { tap, timeout } from 'rxjs/operators';
@@ -10,7 +11,8 @@ import { Observable, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceService{ 
+export class ServiceService{
+  [x: string]: any; 
 
   DataLogin:any;
   DataResponse:any;
@@ -133,14 +135,14 @@ export class ServiceService{
     );
   }
 
-  submitcatering(formcatering){
+  onSubmit(AduancateringPage){
     let dataStorage=JSON.parse(localStorage.getItem(this.TOKEN_KEY));
     this.token=dataStorage;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': "Bearer "+ this.token
     });
-    return this.http.post(this.API_URL + 'catering/add', formcatering, { headers: headers, observe: 'response' }).pipe(
+    return this.http.post(this.API_URL + 'catering/add', AduancateringPage, { headers: headers, observe: 'response' }).pipe(
       tap(Data => {
         this.DataLogin=Data;
         let message='Aduan anda terkirim.';

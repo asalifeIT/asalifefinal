@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 
+
+
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'home', 
@@ -47,6 +49,7 @@ const routes: Routes = [
     path: 'aduancatering',
     loadChildren: () => import('./aduancatering/aduancatering.module').then( m => m.AduancateringPageModule)
   },
+
 
 ];
 

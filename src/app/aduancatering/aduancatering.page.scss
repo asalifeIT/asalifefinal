@@ -6,6 +6,16 @@
   terms found in the Website https://bunchdevelopers.com/license
   Copyright and Good Faith Purchasers © 2021-present bunchdevelopers.
 */
+
+.main-header {
+  height:26vh;
+  width: 150%;
+  background: linear-gradient(45deg, var(--ion-color-tertiary) 30%, var(--ion-color-primary) 100%);
+  box-shadow: 0 1px 30px var(--ion-color-light);
+  border-radius: 0 0 50% 50%;
+  margin-left: -14vh;
+  margin-top: -60px;
+}
 .bg_img {
     height: 250px;
     width: 100%;
@@ -48,15 +58,15 @@
     align-items: center;
     position: relative;
     .sub_heading {
-      font-family: "bold";
-      font-size: 20px;
+      font-family: "regular";
+      font-size: 15px;
     }
     .sub_ttl {
       position: absolute;
       right: 5px;
       top: 45px;
       font-size: 13px;
-      color: #ff7c31;
+      color: #0b0501;
     }
   }
   
@@ -70,7 +80,7 @@
   
   .sub_heading {
     font-family: "bold";
-    color: #ff7c31;
+    color: #0f0e0e;
     margin-top: 10px;
     font-size: 13px;
   }
