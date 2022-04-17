@@ -1,8 +1,8 @@
 <h1>Tes Post Aduan Catering</h1>
-<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
-<input type="text" name="lokasi" ngModel placeholder="lokasi"><br>
-<input type="text" name="deskripsi" ngModel placeholder="deskripsi"><br>
-<input type="text" name="kritik_saran" ngModel placeholder="kritik_saran"><br>
+<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.any)">
+<input type="text" name="lokasi" ngModel placeholder="Lokasi"><br>
+<input type="text" name="deskripsi" ngModel placeholder="Deskripsi"><br>
+<input type="text" name="kritik_saran" ngModel placeholder="Kritik dan saran"><br>
 <ion-button class="expand-block" type="onSubmit">Kirim Aduan</ion-button>
 
 </form>

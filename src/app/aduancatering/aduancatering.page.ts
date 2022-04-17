@@ -6,6 +6,7 @@ import { Platform, ToastController } from '@ionic/angular';
 
 import { catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-aduancatering',
@@ -33,6 +34,7 @@ export class AduancateringPage {
   this.platform.ready().then(() => {
     this.onSubmit();
   });
+  
  }
  options(Data: string, options: any) {
   throw new Error('Method not implemented.');
@@ -44,24 +46,27 @@ console.log("token : " +this.token);
 const headers = new HttpHeaders({
   'Content-Type': 'application/json',
   'Authorization': "Bearer "+ this.token
+
 });
-return this.http.post(this.API_URL + 'catering/add',  {headers: headers, observe: 'response' }).pipe(
+return this.http.post<any>(this.API_URL + 'catering/add',  {headers: headers, observable: 'response' }).pipe(
   timeout(8000),
   tap(Data => {
     this.Data=Data;
     if(Data==200){
-    localStorage.setItem(this.TOKEN_KEY, JSON.stringify(this.DataLogin.access_token));
+     localStorage.setItem(this.TOKEN_KEY, JSON.stringify(this.Data));
   }else{
     this.authenticationState.next(false);
   }
   return Data;
+  
 }),
+
 catchError((err, caught) => {
   let message = "error";
 
-  if(err.status==400){
+  if(err.data==400){
     message='Data Aduan Belum Lengkap.';
-  } else if(err.status==401){
+  } else if(err.data==401){
     message='Data Aduan Belum Ada.';
   } else {
     message='Tidak ada koneksi internet. Silakan periksa koneksi Anda.';
