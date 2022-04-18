@@ -3,8 +3,8 @@ import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Valida
 import { NavController, ModalController, LoadingController, ToastController,Platform } from '@ionic/angular';
 import { RegisterPage } from '../register/register.page';
 import { ServiceService } from '../services/service.service';
-import {Observable, throwError} from "rxjs/index";
-
+import {Observable, ReplaySubject, throwError} from "rxjs/index";
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-aduancatering',
@@ -15,6 +15,21 @@ import {Observable, throwError} from "rxjs/index";
 
 export class AduancateringPage implements OnInit {
   FormAduanCatering:FormGroup;
+  authenticationState = new ReplaySubject(); 
+  authService: any;
+  message:any;
+  validations = {
+    'lokasi': [
+      { type: 'required', message: 'lokasi harus diisi.' }
+    ],
+    'deskripsi': [
+      { type: 'required', message: 'deskripsi harus diisi.' }
+    ],
+    'kritik_saran': [
+      { type: 'required', message: 'kritik dan saran harus diisi.' }
+    ]
+  };
+
   constructor(
     private formBuilder: FormBuilder, 
     private navCtrl: NavController, 
@@ -24,6 +39,8 @@ export class AduancateringPage implements OnInit {
     public toastController: ToastController,
     private serviceService: ServiceService
   ) { }
+
+  
 
   ngOnInit() {
     this.FormAduanCatering=this.formBuilder.group({
@@ -47,15 +64,27 @@ export class AduancateringPage implements OnInit {
 
     this.serviceService.submitaduan(this.FormAduanCatering.value, 'catering/add').subscribe(
       data => {
-        console.log("Sukses menambahkan aduan");
+        console.log("Aduan Anda Terkirim");
         console.log(data);
         loading.dismiss();
       },
-      error => {
-        loading.dismiss();
+         error => {
+          this.presentToast(error);
+          loading.dismiss();
       }
     );
   }
+
+  async presentToast(Message) {
+    const toast = await this.toastController.create({
+      message: Message,
+      duration: 2500,
+      position: "bottom"
+    });
+    toast.present();
+  }
+
+
 
  // onBack(){
  //   this.router.navigate(['catering']);
