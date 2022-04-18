@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { HttpClientModule }    from '@angular/common/http';
 import { RegisterPageModule } from './register/register.module';
+import  {ReactiveFormsModule, FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,9 @@ import { RegisterPageModule } from './register/register.module';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    RegisterPageModule
+    RegisterPageModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     StatusBar,

@@ -7,7 +7,7 @@ import { ServiceService } from '../services/service.service';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  
+
   authstatus:any;
 
   constructor(
@@ -20,5 +20,5 @@ export class AuthGuard implements CanActivate {
     });
     return this.authstatus;
   }
-  
+
 }

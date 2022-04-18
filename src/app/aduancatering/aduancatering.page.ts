@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { UtilService } from 'src/app/services/util.service';
-import { Router } from '@angular/router';
+import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { NavController, ModalController, LoadingController, ToastController,Platform } from '@ionic/angular';
+import { RegisterPage } from '../register/register.page';
+import { ServiceService } from '../services/service.service';
+import {Observable, throwError} from "rxjs/index";
 
 
 @Component({
@@ -9,17 +11,53 @@ import { NavController, ModalController, LoadingController, ToastController,Plat
   templateUrl: './aduancatering.page.html',
   styleUrls: ['./aduancatering.page.scss'],
 })
-export class AduancateringPage implements OnInit {
 
+
+export class AduancateringPage implements OnInit {
+  FormAduanCatering:FormGroup;
   constructor(
+    private formBuilder: FormBuilder, 
+    private navCtrl: NavController, 
     public loadingController: LoadingController,
-    private router: Router,
-    public util: UtilService
+    public modalController: ModalController,
+    private platform: Platform,
+    public toastController: ToastController,
+    private serviceService: ServiceService
   ) { }
 
   ngOnInit() {
+    this.FormAduanCatering=this.formBuilder.group({
+      lokasi:new FormControl('', Validators.compose([
+        Validators.required
+      ])),
+      kritik_saran:new FormControl('', Validators.compose([
+        Validators.required
+      ])),
+      deskripsi:new FormControl('', Validators.compose([
+        Validators.required
+      ]))
+    });
   }
-  onBack(){
-    this.router.navigate(['catering']);
+
+  async submitAduanCatering(){
+    const loading = await this.loadingController.create({
+      message: 'Please wait...'
+    });
+    await loading.present();
+
+    this.serviceService.submitaduan(this.FormAduanCatering.value, 'catering/add').subscribe(
+      data => {
+        console.log("Sukses menambahkan aduan");
+        console.log(data);
+        loading.dismiss();
+      },
+      error => {
+        loading.dismiss();
+      }
+    );
   }
+
+ // onBack(){
+ //   this.router.navigate(['catering']);
+  //}
 }
