@@ -68,7 +68,7 @@ export class AduancateringPage implements OnInit {
 
     this.serviceService.submitaduan(this.FormAduanCatering.value, 'catering/add').subscribe(
       data => {
-        console.log("Aduan Anda Terkirim");
+        this.presentToast("Aduan Anda Terkirim");
         console.log(data);
         loading.dismiss();
       },
