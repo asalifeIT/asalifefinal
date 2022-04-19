@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
+import  {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { AduanlaundryPageRoutingModule } from './aduanlaundry-routing.module';
@@ -13,7 +12,8 @@ import { AduanlaundryPage } from './aduanlaundry.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    AduanlaundryPageRoutingModule
+    AduanlaundryPageRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [AduanlaundryPage]
 })

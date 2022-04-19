@@ -80,7 +80,7 @@ export class AduanhkPage implements OnInit {
     toast.present();
   }
   onBack() {
-    this.router.navigate(['catering']);
+    this.router.navigate(['home']);
   }
 
 

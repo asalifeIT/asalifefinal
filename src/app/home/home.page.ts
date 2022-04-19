@@ -71,7 +71,7 @@ openRest() {
 }
 
 openHkeeping() {
-  this.router.navigate(['aduanhk']);
+  this.router.navigate(['housekeeping']);
 }
 
 openLaundry(){

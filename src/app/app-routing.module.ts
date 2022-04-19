@@ -5,8 +5,9 @@ import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
+
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'home', 
+  { path: 'home',
     canActivate: [AuthGuard],
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   {
@@ -49,12 +50,28 @@ const routes: Routes = [
     path: 'aduancatering',
     loadChildren: () => import('./aduancatering/aduancatering.module').then( m => m.AduancateringPageModule)
   },
+  {
+    path: 'housekeeping',
+    loadChildren: () => import('./housekeeping/housekeeping.module').then( m => m.HousekeepingPageModule)
+  },
+  {
+    path: 'tugashk',
+    loadChildren: () => import('./tugashk/tugashk.module').then( m => m.TugashkPageModule)
+  },
+  {
+    path: 'maintenance',
+    loadChildren: () => import('./maintenance/maintenance.module').then( m => m.MaintenancePageModule)
+  },
+  {
+    path: 'tgsmaintenance',
+    loadChildren: () => import('./tgsmaintenance/tgsmaintenance.module').then( m => m.TgsmaintenancePageModule)
+  },
 
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,  { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -71,15 +71,10 @@ export class AppComponent {
 
   }
 
-  async logout(){
-    const loading = await this.loadingController.create({
-      message: 'Please wait...'
-    });
-    await loading.present();
-    localStorage.clear();
-    this.serviceService.logout();
-    loading.dismiss();
-   }
+  
+   logout(){
+    this.router.navigate(['login']);
 
+   }
 
 }

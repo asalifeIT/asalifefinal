@@ -1,9 +1,57 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>aduanlaundry</ion-title>
-  </ion-toolbar>
-</ion-header>
+ <ion-content>
+  <div class="main_content ion-padding">
 
-<ion-content>
+    <div class="title">
+      <ion-label class="sub_heading" style="color: black;">Form Aduan Laundry</ion-label>
+      <ion-label class="sub_heading"></ion-label>
+      <ion-label class="sub_ttl"></ion-label>
+    </div>
+
+
+
+    
+        <ion-label class="sub_heading">Deskripsi</ion-label>
+    <ion-label class="sub_heading">Silahkan mengisi aduan apabila ditemukan hal-hal yang tidak berkenan</ion-label>
+
+ <div class="content">
+      <ion-item lines="none">
+        <ion-label>1. Pilihan Mess </ion-label>
+        <ion-select>
+          <ion-select-option value="small">  Mess Cheerful</ion-select-option>
+          <ion-select-option value="small">Mess Funtastik</ion-select-option>
+          <ion-select-option value="small">Mess Joyfull</ion-select-option>
+          <ion-select-option value="small">Mess Safety</ion-select-option>
+          <ion-select-option value="small">Mess Integrity</ion-select-option> 
+          <ion-select-option value="small">Mess Synergy</ion-select-option>
+          <ion-select-option value="small">Mess Greatful</ion-select-option>
+          <ion-select-option value="small">Mess Happyness</ion-select-option>
+          <ion-select-option value="small">Mess Powerfull</ion-select-option>
+        </ion-select>
+    </ion-item>
+  
+
+    <ion-item lines="none">
+      <ion-input type="text" placeholder="2. Masukkan No Kamar"></ion-input>
+    </ion-item>
+   
+   
+    <ion-item lines="none">
+      <ion-input type="text" placeholder="3. Masukkan Jenis Pakaian"></ion-input>
+    </ion-item>
+ 
+    <ion-item lines="none">
+      <ion-input type="text" placeholder="4. Masukkan Jenis Deviasi"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-input type="text" placeholder="5. Tanggal di Laundry"></ion-input>
+    </ion-item>
+
+ 
+    <ion-button class="content_button" (click)="onFraduanlaundry()" expand="block">
+      Kirim Aduan
+    </ion-button>
+ </div>
+  </div>
 
 </ion-content>
