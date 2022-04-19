@@ -1,5 +1,5 @@
 ion-card{
-    height:63vh;
+    height:55vh;
     width: 200%;
     background: linear-gradient(90deg, var(--ion-color-tertiary) 10%, var(--ion-color-primary) 100%);
     box-shadow: 0 1px 10px var(--ion-color-light);
@@ -16,7 +16,7 @@ ion-card{
   
   ion-header {
     ion-note{
-      font-size:13px;
+      font-size:10px;
       font-family: "regular";
      }
      ion-chip{

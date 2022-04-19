@@ -17,12 +17,12 @@
      
 
         <ion-card-content class="ion-text-center">
-          <h2><ion-text color="light">Customer User</ion-text></h2>
+          <h2><ion-text color="light">Selamat datang,{{Username}}</ion-text></h2>
           <ion-text color="light">
             <div style="display: flex;" class="ion-justify-content-center">
               <ion-icon name="location-outline" color="medium">
               </ion-icon>
-              <p>Departement</p>
+              <p>Anda Sebagai </p>
             </div>
           </ion-text>
         </ion-card-content>
@@ -34,34 +34,34 @@
   <div class="header-content"> </div> 
       <ion-menu-toggle>
       <ion-item lines="none" (click)="home()">
-        <ion-icon slot="start" name="home" color="warning"></ion-icon>
+        <ion-icon slot="start" name="home" color="primary"></ion-icon>
         <ion-label>HOME</ion-label>
       </ion-item>
       <ion-item lines="none" (click)="home()">
-        <ion-icon slot="start" name="accessibility" color="warning"></ion-icon>
+        <ion-icon slot="start" name="accessibility" color="primary"></ion-icon>
         <ion-label>ASA LIFE</ion-label>
       </ion-item>
 
       <ion-item lines="none" (click)="nearby()">
-        <ion-icon slot="start" name="newspaper" color="warning"></ion-icon>
+        <ion-icon slot="start" name="newspaper" color="primary"></ion-icon>
         <ion-label>ASA SGMS </ion-label>
       </ion-item>
       <ion-item lines="none">
-        <ion-icon slot="start" name="bed" color="warning"></ion-icon>
+        <ion-icon slot="start" name="bed" color="primary"></ion-icon>
         <ion-label>ASA EMERGENCY</ion-label>
       </ion-item>
 
       <ion-item lines="none" >
-        <ion-icon slot="start" name="shirt" color="warning"></ion-icon>
+        <ion-icon slot="start" name="shirt" color="primary"></ion-icon>
         <ion-label>ASA SHOP</ion-label>
       </ion-item>
       <ion-item lines="none" >
-        <ion-icon slot="start" name="keypad" color="warning"></ion-icon>
+        <ion-icon slot="start" name="keypad" color="primary"></ion-icon>
         <ion-label>ASA SOCIAL</ion-label>
 
       </ion-item>
         <ion-item lines="none" (click)="logout()">
-        <ion-icon slot="start" name="log-out" color="warning"></ion-icon>
+        <ion-icon slot="start" name="log-out" color="primary"></ion-icon>
         <ion-label>LOGOUT</ion-label>
       </ion-item>
     </ion-menu-toggle>

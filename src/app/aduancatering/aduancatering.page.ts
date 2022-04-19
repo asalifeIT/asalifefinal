@@ -5,6 +5,8 @@ import { RegisterPage } from '../register/register.page';
 import { ServiceService } from '../services/service.service';
 import {Observable, ReplaySubject, throwError} from "rxjs/index";
 import { catchError } from 'rxjs/operators';
+import { UtilService } from 'src/app/services/util.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-aduancatering',
@@ -37,7 +39,9 @@ export class AduancateringPage implements OnInit {
     public modalController: ModalController,
     private platform: Platform,
     public toastController: ToastController,
-    private serviceService: ServiceService
+    private serviceService: ServiceService,
+    private router: Router,
+    public util: UtilService
   ) { }
 
   
@@ -84,7 +88,9 @@ export class AduancateringPage implements OnInit {
     toast.present();
   }
 
-
+  onBack() {
+    this.router.navigate(['catering']);
+  }
 
  // onBack(){
  //   this.router.navigate(['catering']);

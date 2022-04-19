@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { UtilService } from 'src/app/services/util.service';
 import { ServiceService } from './services/service.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -16,9 +17,8 @@ import { ServiceService } from './services/service.service';
 export class AppComponent {
   Username:any;
   DataLogin:any;
-
+  loadingController: any;
   constructor(
-
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
@@ -29,7 +29,6 @@ export class AppComponent {
   ) {
     this.initializeApp();
   }
-
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -49,11 +48,38 @@ export class AppComponent {
    });
   }
 
-  ngOnInit() {
-  }
+
 
   home() {
-    this.router.navigate(['tabs/tab1']);
+    this.router.navigate(['home']);
   }
+
+  ngOnInit() {
+ //ambil data dari localstorage
+ let dataStorage=JSON.parse(localStorage.getItem(this.serviceService.TOKEN_KEY));
+ // this.Username=dataStorage.data.Username;
+ this.serviceService.CekUser().subscribe(
+   data => {
+     this.DataLogin=data;
+     console.log(this.DataLogin)
+     this.Username=this.DataLogin.body.name;
+   },
+   error => {
+     console.log("error");
+   }
+ );
+
+  }
+
+  async logout(){
+    const loading = await this.loadingController.create({
+      message: 'Please wait...'
+    });
+    await loading.present();
+    localStorage.clear();
+    this.serviceService.logout();
+    loading.dismiss();
+   }
+
 
 }
