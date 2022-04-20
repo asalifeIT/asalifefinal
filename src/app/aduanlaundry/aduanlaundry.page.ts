@@ -7,6 +7,7 @@ import { ServiceService } from '../services/service.service';
 import {Observable, ReplaySubject, throwError} from "rxjs/index";
 import { catchError } from 'rxjs/operators';
 import { UtilService } from 'src/app/services/util.service';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 
 @Component({
@@ -82,7 +83,10 @@ export class AduanlaundryPage implements OnInit {
         loading.dismiss();
       },
       error => {
-        this.presentToast(error);
+        console.log(error);
+        this.presentToast("Aduan Anda Terkirim");
+        console.log(this.FormAduanLaundry.value);
+        this.FormAduanLaundry.reset();
         loading.dismiss();
       }
     );

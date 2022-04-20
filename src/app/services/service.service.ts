@@ -190,7 +190,7 @@ export class ServiceService{
       }),
       catchError((err, caught) => {
         let message = "Gagal Terkirim, Mohon Aduan Diisi Lengkap!";
-        return throwError(message);
+        return throwError(err);
       })
     );
   }
