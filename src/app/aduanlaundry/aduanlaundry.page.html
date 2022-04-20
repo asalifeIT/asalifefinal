@@ -26,22 +26,22 @@
     <ion-item>  
     <ion-label>* Pilihan Mess </ion-label>
         <ion-select formControlName="mess">
-          <ion-select-option value="small">  Mess Cheerful</ion-select-option>
-          <ion-select-option value="small">Mess Funtastik</ion-select-option>
-          <ion-select-option value="small">Mess Joyfull</ion-select-option>
-          <ion-select-option value="small">Mess Safety</ion-select-option>
-          <ion-select-option value="small">Mess Integrity</ion-select-option> 
-          <ion-select-option value="small">Mess Synergy</ion-select-option>
-          <ion-select-option value="small">Mess Greatful</ion-select-option>
-          <ion-select-option value="small">Mess Happyness</ion-select-option>
-          <ion-select-option value="small">Mess Powerfull</ion-select-option>
+          <ion-select-option ngvalue="Mess Cheerful">Mess Cheerful</ion-select-option>
+          <ion-select-option ngvalue="Mess Funtastik">Mess Funtastik</ion-select-option>
+          <ion-select-option ngvalue="Mess Joyfull">Mess Joyfull</ion-select-option>
+          <ion-select-option ngvalue="Mess Safety">Mess Safety</ion-select-option>
+          <ion-select-option ngvalue="Mess Integrity">Mess Integrity</ion-select-option> 
+          <ion-select-option ngvalue="Mess Synergy">Mess Synergy</ion-select-option>
+          <ion-select-option ngvalue="Mess Greatful">Mess Greatful</ion-select-option>
+          <ion-select-option ngvalue="Mess Happyness">Mess Happyness</ion-select-option>
+          <ion-select-option ngvalue="Mess Powerfull">Mess Powerfull</ion-select-option>
         </ion-select></ion-item>  
       <ion-item><ion-input type="text" placeholder="2. Masukkan No Kamar" formControlName="no_kamar"></ion-input></ion-item>
       <ion-item> <ion-input type="text" placeholder="3. Masukkan Jenis Pakaian" formControlName="jenis_pakaian"></ion-input></ion-item>
         <ion-item><ion-input type="text" placeholder="4. Masukkan Jenis Deviasi" formControlName="jenis_deviasi"></ion-input></ion-item>
           <ion-item>
             <ion-label>Klik Tanggal</ion-label>
-          <ion-datetime displayFormat="DD.MM.YYYY" presentation="date" [(ngModel)]="date"></ion-datetime>
+            <ion-datetime value="2022-02-20" placeholder="Select Date" formControlName="tanggal_loundry"></ion-datetime>  
         </ion-item>
          <ion-button type="submit" expand="block" color="primary">Submit</ion-button>
       </form>

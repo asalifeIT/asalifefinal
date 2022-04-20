@@ -187,11 +187,17 @@ export class ServiceService{
         this.DataLogin=Data;
         let message='Aduan Anda terkirim.';
         return message;
+
+      }),
+      catchError((err, caught) => {
+        let message = "Gagal Terkirim, Mohon Aduan Diisi Lengkap!";
+        return throwError(message);
       }),
       catchError((err, caught) => {
         let message = "Gagal Terkirim, Mohon Aduan Diisi Lengkap!";
         return throwError(err);
-      })
+      }),
+
     );
   }
 

@@ -64,7 +64,7 @@ export class AduanlaundryPage implements OnInit {
       jenis_deviasi:new FormControl('', Validators.compose([
         Validators.required
       ])),
-      tanggal_laundry:new FormControl('', Validators.compose([
+      tanggal_loundry:new FormControl('', Validators.compose([
         Validators.required
       ])),
     });
@@ -89,6 +89,7 @@ export class AduanlaundryPage implements OnInit {
         this.FormAduanLaundry.reset();
         loading.dismiss();
       }
+
     );
    }
    async presentToast(Message) {
