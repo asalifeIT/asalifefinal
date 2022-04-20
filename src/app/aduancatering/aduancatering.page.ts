@@ -78,8 +78,7 @@ export class AduancateringPage implements OnInit {
         loading.dismiss();
       }
     );
- 
-  }
+   }
 
   async presentToast(Message) {
     const toast = await this.toastController.create({
@@ -88,7 +87,6 @@ export class AduancateringPage implements OnInit {
       position: "bottom"
     });
     toast.present();
-
   }
 
   onBack() {

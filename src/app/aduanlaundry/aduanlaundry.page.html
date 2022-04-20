@@ -1,22 +1,32 @@
  <ion-content>
+  <ion-header class="ion-no-border">
+    <ion-item lines="none">
+      <ion-buttons slot="start">
+        <ion-button (click)="util.openSideMenu()">
+          <ion-icon name="menu"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-label color="dark">
+      Form Aduan Catering
+    </ion-label>
+    <ion-buttons slot="end">
+      <ion-icon (click)="onBack()" name="arrow-undo"></ion-icon>
+    </ion-buttons>
+    </ion-item>
+   </ion-header>
   <div class="main_content ion-padding">
-
     <div class="title">
       <ion-label class="sub_heading" style="color: black;">Form Aduan Laundry</ion-label>
       <ion-label class="sub_heading"></ion-label>
       <ion-label class="sub_ttl"></ion-label>
-    </div>
-
-
-
-    
         <ion-label class="sub_heading">Deskripsi</ion-label>
     <ion-label class="sub_heading">Silahkan mengisi aduan apabila ditemukan hal-hal yang tidak berkenan</ion-label>
-
- <div class="content">
-      <ion-item lines="none">
-        <ion-label>1. Pilihan Mess </ion-label>
-        <ion-select>
+  </div>
+  <div>
+  <form class="container" [formGroup]="FormAduanLaundry" (ngSubmit)="submitAduanLaundry()">
+    <ion-item>  
+    <ion-label>* Pilihan Mess </ion-label>
+        <ion-select formControlName="mess">
           <ion-select-option value="small">  Mess Cheerful</ion-select-option>
           <ion-select-option value="small">Mess Funtastik</ion-select-option>
           <ion-select-option value="small">Mess Joyfull</ion-select-option>
@@ -26,32 +36,16 @@
           <ion-select-option value="small">Mess Greatful</ion-select-option>
           <ion-select-option value="small">Mess Happyness</ion-select-option>
           <ion-select-option value="small">Mess Powerfull</ion-select-option>
-        </ion-select>
-    </ion-item>
-  
-
-    <ion-item lines="none">
-      <ion-input type="text" placeholder="2. Masukkan No Kamar"></ion-input>
-    </ion-item>
-   
-   
-    <ion-item lines="none">
-      <ion-input type="text" placeholder="3. Masukkan Jenis Pakaian"></ion-input>
-    </ion-item>
- 
-    <ion-item lines="none">
-      <ion-input type="text" placeholder="4. Masukkan Jenis Deviasi"></ion-input>
-    </ion-item>
-
-    <ion-item lines="none">
-      <ion-input type="text" placeholder="5. Tanggal di Laundry"></ion-input>
-    </ion-item>
-
- 
-    <ion-button class="content_button" (click)="onFraduanlaundry()" expand="block">
-      Kirim Aduan
-    </ion-button>
- </div>
+        </ion-select></ion-item>  
+      <ion-item><ion-input type="text" placeholder="2. Masukkan No Kamar" formControlName="kamar"></ion-input></ion-item>
+      <ion-item> <ion-input type="text" placeholder="3. Masukkan Jenis Pakaian" formControlName="jenis_pakaian"></ion-input></ion-item>
+        <ion-item><ion-input type="text" placeholder="4. Masukkan Jenis Deviasi" formControlName="jenis_deviasi"></ion-input></ion-item>
+          <ion-item>
+            <ion-label>Masukkan Tanggal</ion-label>
+          <ion-datetime displayFormat="DD.MM.YYYY" presentation="date" [(ngModel)]="date"></ion-datetime>
+        </ion-item>
+         <ion-button type="submit" expand="block" color="primary">Submit</ion-button>
+      </form>
+    </div>
   </div>
-
 </ion-content>

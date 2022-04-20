@@ -15,6 +15,27 @@ import { UtilService } from 'src/app/services/util.service';
   styleUrls: ['./aduanlaundry.page.scss'],
 })
 export class AduanlaundryPage implements OnInit {
+  FormAduanLaundry:FormGroup;
+  authenticationState = new ReplaySubject(); 
+  authService: any;
+  message:any;
+  validations = {
+     'mess': [
+      { type: 'required', message: 'pilihan mess harus di isi' }
+    ],
+    'no_kamar': [
+      { type: 'required', message: 'nomor kamar harus di isi' }
+    ],
+    'jenis_pakaian': [
+      { type: 'required', message: 'jenis pakaian harus diisi.' }
+    ],
+    'jenis_deviasi': [
+      { type: 'required', message: 'jenis deviasi harus diisi.' }
+    ],
+    'tanggal_laundry': [
+      { type: 'required', message: 'pilihan tanggal harus diisi.' }
+    ]
+  };
 
   constructor(
     private formBuilder: FormBuilder, 
@@ -29,6 +50,53 @@ export class AduanlaundryPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.FormAduanLaundry=this.formBuilder.group({
+      mess:new FormControl('', Validators.compose([
+        Validators.required
+      ])),
+      no_kamar:new FormControl('', Validators.compose([
+        Validators.required
+      ])),
+      jenis_pakaian:new FormControl('', Validators.compose([
+        Validators.required
+      ])),
+      jenis_deviasi:new FormControl('', Validators.compose([
+        Validators.required
+      ])),
+      tanggal_laundry:new FormControl('', Validators.compose([
+        Validators.required
+      ])),
+    });
   }
 
+  async submitAduanLaundry(){
+    const loading = await this.loadingController.create({
+      message: 'Please wait...'
+    });
+    await loading.present();
+    this.serviceService.submitaduanlaundry(this.FormAduanLaundry.value, 'laundry/add').subscribe(
+      data => {
+        this.presentToast("Aduan Anda Terkirim");
+        console.log(this.FormAduanLaundry.value);
+        this.FormAduanLaundry.reset();
+        loading.dismiss();
+      },
+      error => {
+        this.presentToast(error);
+        loading.dismiss();
+      }
+    );
+   }
+   async presentToast(Message) {
+    const toast = await this.toastController.create({
+      message: Message,
+      duration: 2500,
+      position: "bottom"
+    });
+    toast.present();
+  }
+
+  onBack() {
+    this.router.navigate(['home']);
+  }
 }

@@ -175,6 +175,25 @@ export class ServiceService{
     );
   }
 
+  submitaduanlaundry(form, url){
+    let dataStorage=JSON.parse(localStorage.getItem(this.TOKEN_KEY));
+    this.token=dataStorage;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': "Bearer "+ this.token
+    });
+    return this.http.post(this.API_URL + url , form, { headers: headers, observe: 'response' }).pipe(
+      tap(Data => {
+        this.DataLogin=Data;
+        let message='Aduan Anda terkirim.';
+        return message;
+      }),
+      catchError((err, caught) => {
+        let message = "Gagal Terkirim, Mohon Aduan Diisi Lengkap!";
+        return throwError(message);
+      })
+    );
+  }
 
 
 
