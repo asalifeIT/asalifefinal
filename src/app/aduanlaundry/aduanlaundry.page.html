@@ -7,7 +7,7 @@
         </ion-button>
       </ion-buttons>
       <ion-label color="dark">
-      Form Aduan Catering
+      Form Aduan Laundry
     </ion-label>
     <ion-buttons slot="end">
       <ion-icon (click)="onBack()" name="arrow-undo"></ion-icon>
@@ -16,8 +16,7 @@
    </ion-header>
   <div class="main_content ion-padding">
     <div class="title">
-      <ion-label class="sub_heading" style="color: black;">Form Aduan Laundry</ion-label>
-      <ion-label class="sub_heading"></ion-label>
+          <ion-label class="sub_heading"></ion-label>
       <ion-label class="sub_ttl"></ion-label>
         <ion-label class="sub_heading">Deskripsi</ion-label>
     <ion-label class="sub_heading">Silahkan mengisi aduan apabila ditemukan hal-hal yang tidak berkenan</ion-label>
@@ -41,7 +40,7 @@
       <ion-item> <ion-input type="text" placeholder="3. Masukkan Jenis Pakaian" formControlName="jenis_pakaian"></ion-input></ion-item>
         <ion-item><ion-input type="text" placeholder="4. Masukkan Jenis Deviasi" formControlName="jenis_deviasi"></ion-input></ion-item>
           <ion-item>
-            <ion-label>Masukkan Tanggal</ion-label>
+            <ion-label>Klik Tanggal</ion-label>
           <ion-datetime displayFormat="DD.MM.YYYY" presentation="date" [(ngModel)]="date"></ion-datetime>
         </ion-item>
          <ion-button type="submit" expand="block" color="primary">Submit</ion-button>
