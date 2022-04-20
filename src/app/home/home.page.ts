@@ -13,7 +13,7 @@ import { UtilService } from 'src/app/services/util.service';
 })
 export class HomePage implements OnInit {
   features: any[] = [
-    {id: 1, name: 'Catering', src: 'assets/images/catering.png', background: 'rgba(27,150,181, 0.1)', page: ''},
+    {id: 1, name: 'Catering', src: 'assets/images/cat.png', background: 'rgba(27,150,181, 0.1)', page: ''},
   ]; 
 
   laundry: any[] = [

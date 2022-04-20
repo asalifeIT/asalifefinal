@@ -61,7 +61,8 @@ export class AduanhkPage implements OnInit {
     this.serviceService.submitaduanhk(this.FormAduanHk.value, 'housekeeping/add').subscribe(
       data => {
         this.presentToast("Aduan Anda Terkirim");
-        console.log(data);
+        console.log(this.FormAduanHk.value);
+        this.FormAduanHk.reset();
         loading.dismiss();
       },
          error => {

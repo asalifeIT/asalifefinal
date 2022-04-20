@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { NavController, ModalController, LoadingController, ToastController,Platform } from '@ionic/angular';
-import { RegisterPage } from '../register/register.page';
 import { ServiceService } from '../services/service.service';
 import {Observable, ReplaySubject, throwError} from "rxjs/index";
-import { catchError } from 'rxjs/operators';
 import { UtilService } from 'src/app/services/util.service';
 import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-aduancatering',
@@ -42,6 +42,7 @@ export class AduancateringPage implements OnInit {
     private serviceService: ServiceService,
     private router: Router,
     public util: UtilService
+
   ) { }
 
   
@@ -65,18 +66,19 @@ export class AduancateringPage implements OnInit {
       message: 'Please wait...'
     });
     await loading.present();
-
     this.serviceService.submitaduan(this.FormAduanCatering.value, 'catering/add').subscribe(
       data => {
         this.presentToast("Aduan Anda Terkirim");
-        console.log(data);
+        console.log(this.FormAduanCatering.value);
+        this.FormAduanCatering.reset();
         loading.dismiss();
       },
-         error => {
-          this.presentToast(error);
-          loading.dismiss();
+      error => {
+        this.presentToast(error);
+        loading.dismiss();
       }
     );
+ 
   }
 
   async presentToast(Message) {
@@ -86,6 +88,7 @@ export class AduancateringPage implements OnInit {
       position: "bottom"
     });
     toast.present();
+
   }
 
   onBack() {

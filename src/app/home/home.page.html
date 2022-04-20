@@ -8,7 +8,7 @@
     <ion-label color="light">
       Menu Dashboard
     </ion-label>
-    <ion-buttons slot="end">
+    <ion-buttons slot="end" color="light">
       <ion-icon (click)="logout()" name="power-sharp"></ion-icon>
     </ion-buttons>
   </ion-item>
@@ -18,8 +18,11 @@
   <div class="main-header"></div>
     <ion-grid>
     <ion-note color="light" class="ion-margin-start">
-      ASA SERVICE <strong>Selamat datang! {{Username}}</strong>
-         </ion-note>
+      ASA SERVICE 
+         </ion-note><br>
+         <ion-note color="light" class="ion-margin-start">
+        Selamat datang! {{Username}}
+             </ion-note>
 
     <ion-row>
       <ion-col size="6">
